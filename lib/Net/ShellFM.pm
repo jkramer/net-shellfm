@@ -47,6 +47,19 @@ you to control it remotely.
 
 =head2 new
 
+Creates a new instance of this class. Depending on the number of arguments a
+different kind of connection will be used.
+
+With no arguments, this will try to extract connection infromation from the
+Shell.FM configuration "~/.shell-fm/shell-fm.rc" (UNIX socket will be preferred
+over TCP connection information, if both are found).
+
+With one argument, the argument will be used as path to a UNIX socket (option
+"unix" from the configuration).
+
+With two arguments, the first one will be used as the remote host and the
+second one as the remote port for a TCP connection.
+
 =cut
 
 sub new {
